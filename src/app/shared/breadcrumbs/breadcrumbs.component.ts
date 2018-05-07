@@ -28,7 +28,6 @@ export class BreadcrumbsComponent implements OnInit {
         };
 
         this.meta.updateTag(metaTag);
-        console.log(this.meta);
       });
   }
   getDataRouter() {
