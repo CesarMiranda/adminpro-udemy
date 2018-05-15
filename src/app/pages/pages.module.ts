@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { PAGES_ROUTES } from './pages.routes';
+import { CommonModule } from '@angular/common';
 
 import { SharedModule } from '../shared/shared.module';
 
@@ -46,6 +47,7 @@ import { ProfileComponent } from './profile/profile.component';
         Graficas1Component
     ],
     imports: [
+        CommonModule,
         SharedModule,
         PAGES_ROUTES,
         FormsModule,

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { URL_SERVICIOS } from './../../config/config';
 
 @Injectable()
 export class SubirArchivoService {
@@ -17,16 +18,16 @@ export class SubirArchivoService {
 
           if ( xhr.status === 200 ) {
             console.log('imagen subida');
-            resolve( xhr.response );
+            resolve( JSON.parse(xhr.response));
           } else {
             console.log('fallo la subida');
             reject( xhr.response );
           }
         }
       };
-      // let url = URL_SERVICES + '/upload/' + tipo + '/' + id;
-      // xhr.open('PUT', url, true);
-      // xhr.send( formData );
+      let url = URL_SERVICIOS + '/upload/' + tipo + '/' + id;
+      xhr.open('PUT', url, true);
+      xhr.send( formData );
     });
   }
 }
